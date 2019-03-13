@@ -1,0 +1,41 @@
+{
+  "name": "node-seed",
+  "author": "Micha Sherman",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts",
+    "start:debug": "ts-node --inspect src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "preset": "jest-preset-typescript",
+    "testURL": "http://localhost/",
+    "transform": {
+      ".ts": "ts-jest"
+    }
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "compression": "1.7.3",
+    "cors": "2.8.5",
+    "express": "4.16.4",
+    "moment": "2.22.2",
+    "winston": "3.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "23.3.1",
+    "@types/moment": "2.13.0",
+    "@types/node": "10.12.2",
+    "@types/winston": "2.3.7",
+    "jest": "23.4.2",
+    "jest-preset-typescript": "1.0.1",
+    "nodemon": "1.18.5",
+    "rimraf": "2.6.2",
+    "ts-jest": "23.1.4",
+    "ts-node": "7.0.1",
+    "typescript": "3.1.1"
+  }
+}
