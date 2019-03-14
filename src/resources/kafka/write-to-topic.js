@@ -1,9 +1,9 @@
 /* 
 * how to:
-* writeToTopic({test: 'test'}, 'test.t').then((data) => console.log('works')).catch((err) => console.log("doesn't work"));
+* writeToTopic({test: 'test'}, 'test.t').then((data) => console.log('works')).catch((err) => console.log("doesn't work- " + err));
 */
 const kafka = require('kafka-node');
-const options = require('./kafka-client-configurations.js');
+const options = require('./kafka-client-configurations');
 module.exports = (messages, topicName) => {
     return new Promise((resolve, reject) => {
         const producer = new kafka.Producer(new kafka.KafkaClient(options));

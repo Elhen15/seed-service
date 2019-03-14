@@ -14,7 +14,7 @@ const options = {
             }
         },
         schemes: ['http'],
-        host:  process.env.serviceHostName || os.hostname() + ':8080'
+        host: await zooKeeperAccess.getNodeData("/skypath/environment/dev/zookeeperAccess/node-seed-service/osServiceName") || os.hostname() + ':8080'
     },
     apis: ['the name of the js file'],
 };
