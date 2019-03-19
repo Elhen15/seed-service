@@ -7,7 +7,7 @@ This project was created in order to avoid all boilerplate configuration when st
 
 ## Getting Started
 
-Run `yarn install` to install decencies.
+Run `npm install` to install decencies.
 <br/>
 Run `npm start` to execute the server.
 <br/>
@@ -21,7 +21,7 @@ Run `npm test` to execute the unit tests via [`Jest`](https://confluence.app.iaf
 
 ## Styleguide
 
-Built according to node [`styleguide`](https://bitbucket.app.iaf/projects/MP/repos/styleguides/browse/node/node-styleguide.md)
+Built according to node [`standards`](https://confluence.app.iaf/pages/viewpage.action?pageId=40502350) and [`styleguide`](https://bitbucket.app.iaf/projects/MP/repos/styleguides/browse/node/node-styleguide.md).
 
 ## Further help
 
