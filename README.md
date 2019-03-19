@@ -26,3 +26,12 @@ Built according to node [`standards`](https://confluence.app.iaf/pages/viewpage.
 ## Further help
 
 To get more help contact any of MATAN-public admins (Micha Sherman and friends).
+
+## Technologies
+1. express from http server
+2. swageer using swagger-ui-express & swagger-jsdoc
+3. kafka using kafka-node
+4. logger using skyPath logger, built on winston
+5. oracle db using 
+6. mongo db using mongodb
+7. json validation using ajv
