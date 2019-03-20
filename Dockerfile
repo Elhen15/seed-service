@@ -3,6 +3,6 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-EXPOSE 9001
+EXPOSE 8081
 
 CMD node server.js
