@@ -6,15 +6,15 @@ This project was created in order to avoid all boilerplate configuration when st
 </blockquote>
 
 ## Preparations
-Make sure that your npm registry is set to verdaccio. If not, run 'npm set registry http://esb-dev-dck-1:4873'.
+Make sure that your npm registry is set to verdaccio. If not, run `npm set registry http://esb-dev-dck-1:4873`.
 <br/>
-In order to use zookeeper you must set 'process.env.environment' and 'process.env.zookeeperServer'. 
+In order to use zookeeper you must set `process.env.environment` and `process.env.zookeeperServer`. 
 <br/>
-Use zooki-UI or createNode & setNodeData functions to insert to the zookeeper all the needed configurations,
+Use [zooki-UI](http://zooki-skp.app.osft/) or [createNode & setNodeData](https://bitbucket.app.iaf/projects/SP/repos/skp-zookeeper-node-access/browse) functions to insert to the zookeeper all the needed configurations,
 <br/>
-such as the kafkaHost and the express port.
+such as the `kafkaHost` and the express `port`.
 <br/>
-Check the node-seed example at zooki.
+Check out the node-seed example at zooki for more information.
 
 ## Getting Started
 Run `npm install` to install decencies.
