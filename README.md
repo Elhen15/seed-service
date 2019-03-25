@@ -10,7 +10,7 @@ Make sure that your npm registry is set to verdaccio. If not, run `npm set regis
 <br/>
 In order to use zookeeper you must set `process.env.environment` and `process.env.zookeeperServer`. 
 <br/>
-Use [zooki-UI](http://zooki-skp.app.osft/) or [createNode & setNodeData](https://bitbucket.app.iaf/projects/SP/repos/skp-zookeeper-node-access/browse) functions to insert to the zookeeper all the needed configurations,
+Use [`zooki-UI`](http://zooki-skp.app.osft/) or [`createNode & setNodeData`](https://bitbucket.app.iaf/projects/SP/repos/skp-zookeeper-node-access/browse) functions to insert to the zookeeper all the needed configurations,
 <br/>
 such as the `kafkaHost` and the express `port`.
 <br/>
