@@ -5,8 +5,18 @@ node-seed
 This project was created in order to avoid all boilerplate configuration when starting NodeJS development.
 </blockquote>
 
-## Getting Started
+## Preparations
+Make sure that your npm registry is set to verdaccio. If not, run 'npm set registry http://esb-dev-dck-1:4873'.
+<br/>
+In order to use zookeeper you must set 'process.env.environment' and 'process.env.zookeeperServer'. 
+<br/>
+Use zooki-UI or createNode & setNodeData functions to insert to the zookeeper all the needed configurations,
+<br/>
+such as the kafkaHost and the express port.
+<br/>
+Check the node-seed example at zooki.
 
+## Getting Started
 Run `npm install` to install decencies.
 <br/>
 Run `npm start` to execute the server.
