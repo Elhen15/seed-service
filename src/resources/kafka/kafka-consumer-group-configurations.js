@@ -1,10 +1,11 @@
-const kafkaHostAddress = require('./kafka-host-address');
-const kafkaHost = (kafkaHostAddress.kafkaHostServer || 'skp-dev-kafka-1') + ':' + (kafkaHostAddress.kafkaHostPort || '9092');
+module.exports = (async() => {
+  const kafkaHostAddress = await require('./kafka-host-address') || 'skp-int-kafka-1:9092';
+  return {
+    kafkaHost: kafkaHostAddress,
+    autoCommit: false,
+    sessionTimeout: 10000,
+    protocol: ['roundrobin'],
+    fromOffset: 'latest'
+  };
+})();
 
-module.exports = {
-  kafkaHost: kafkaHost,
-  autoCommit: false,
-  sessionTimeout: 10000,
-  protocol: ['roundrobin'],
-  fromOffset: 'latest'
-};
