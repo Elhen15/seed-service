@@ -1,0 +1,1 @@
+module.exports = {zookeeperUrl: "/skypath/environment/" + (process.env.environment || 'predev') + "/node-seed-service/"}

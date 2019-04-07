@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node src/server/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,10 +19,12 @@
   "license": "ISC",
   "dependencies": {
     "ajv": "^6.10.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
+    "jest": "^23.1.0",
     "mathjs": "^2.7.0",
     "skp-kafka-node": "^1.0.1",
-    "skp-zookeeper-node-access": "^1.0.0",
-    "jest": "^23.1.0"
+    "skp-zookeeper-node-access": "^1.0.0"
   }
 }

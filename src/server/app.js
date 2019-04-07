@@ -3,9 +3,10 @@ const app = express();
 const routingFunctions = require('./routing-functions');
 const middlewareFunctions = require('./middleware-functions');
 const swaggerDoc = require('../resources/swagger/swagger-doc');
+const bodyParser = require('body-parser');
 swaggerDoc(app);
 
-app.use([bodyParser.json(), 
+app.use([bodyParser.json(),
         middlewareFunctions.accessControlMiddleware()]);
 
 app.get('/', [routingFunctions.handleGet()]);
