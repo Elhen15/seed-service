@@ -21,7 +21,7 @@ Run `npm install` to install decencies.
 <br/>
 Run `npm start` to execute the server.
 <br/>
-Navigate to `http://localhost:8081/`.
+Navigate to `http://localhost:7800/`.
 <br/>
 The app will automatically reload if you change any of the source files.
 <br/>
@@ -43,7 +43,7 @@ To get more help contact ESB team.
 1. http server using express 
 2. swageer using swagger-ui-express & swagger-jsdoc
 3. kafka using kafka-node
-4. logger using skyPath logger, build on winston
+4. logger using sky-path-logger logger, build on winston
 5. oracle db using ???
 6. mongo db using mongodb
 7. json validation using ajv

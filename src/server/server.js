@@ -1,15 +1,10 @@
 (async() => {
-    await require('../resources/utilities/configControl');
-    const app = require('./app.js');
-    //const zooKeeperAccess = require('skp-zookeeper-node-access');
-    //const zookeeperUrl = require('../resources/utilities/shared').zookeeperUrl;
+    const configControl = await require('../resources/utilities/config-control');
+    const app = require('./app');
+    const port = process.env.port || 7800;
+    
+    configControl.err != null ? console.log(configControl.err) : '';
 
-    /*zooKeeperAccess.getNodeData(zookeeperUrl + 'port').then((port)=> {
-        app.listen(port, () => {
-            console.log('Waiting for request at ' + port)
-        });
-    });*/   
-    let port = process.env.port || 7800;
     app.listen(port, () => {
         console.log('Waiting for request at ' + port)
     });
