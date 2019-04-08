@@ -17,7 +17,6 @@ app.get('/p/:paramVal', [routingFunctions.handleGetWithParams()]);
 
 app.get('/p', [routingFunctions.handleGetWithQuery()]);
 
-
 /**
  * @swagger
  * /e:

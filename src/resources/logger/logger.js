@@ -1,18 +1,16 @@
 const logger = require('sky-path-logger');
-const host = 
-const port = 
-logger.initializeLogger('info',{ host: 'dummy-host-1', port: 44444 });
+const host = process.env.elkHost || 'elk-dev-lga-2';
+const port =  process.env.elkPort || 45612;
+
+logger.initializeLogger('info',{ host: host, port: port });
 
 logger.initializeMessageFrame({ microserviceData:
     { systemName: 'SkyPath',
-      serviceName: 'reception-matrix-connectivity-consumer',
+      serviceName: process.env.serviceName || 'node-seed-service',
       serviceVersion: '1.0',
       podId: 'OVERRIDE' },
-   skypathMessageId: 'dafb2cd6-655a-4e7e-8fbf-5dcd84e20d4b',
-   additionalIds:[
-    { systemName: 'NADIV',
-      itemId: '777',
-      systemId: '02' }
-   ],
    tags:
-    [ '@nitur-Tahalici','@esb' ] });
+    [ '@node-seed'] 
+});
+
+module.exports = logger;

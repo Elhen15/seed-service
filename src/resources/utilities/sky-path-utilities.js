@@ -6,7 +6,6 @@ function generateUUIDV4() { return uuidv4() }//Creates UUID by Random element (v
 
 function dateMoment() { return moment() } //Creates moment by 'YYYY-MM-DDTHH:mm:ss.SSSZ' configuration. Needs to get ".format()" in order to execute. 
 
-
 module.exports = {
     generateUUIDV4,
     dateMoment

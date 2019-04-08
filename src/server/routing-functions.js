@@ -52,4 +52,4 @@ module.exports = {
     handlePost,
     handleGetWithParams,
     handleGetWithQuery
-};
+}

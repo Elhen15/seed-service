@@ -15,7 +15,9 @@ async function getDynamicNodeData(nodeName){
 
 module.exports = (async() => {
     await getDynamicNodeData('port');
-    await getDynamicNodeData('osServiceName').catch(delete process.env.osServiceName);
+    await getDynamicNodeData('osServiceName');
     await getDynamicNodeData('kafkaHost');
+    await getDynamicNodeData('elkHost');
+    await getDynamicNodeData('elkPort');
     return(err === '' ? ({data: 'success', err: null}) : ({data: null, err: err}));
 })();
