@@ -9,7 +9,7 @@ swaggerDoc(app);
 app.use([bodyParser.json(),
         middlewareFunctions.accessControlMiddleware()]);
 
-app.get('/', [routingFunctions.handleGet()]);
+app.get('/', routingFunctions.handleGet());
 
 app.post('/', [routingFunctions.handlePost()]);
 

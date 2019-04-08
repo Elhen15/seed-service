@@ -31,7 +31,7 @@ The app will automatically reload if you change any of the source files.
 <br/>
 If using open shift create `process.env.environment` & `process.env.zookeeperServer`.
 <br/>
-Also, consider creating `process.env.serviceName` or just leave it hard-coded in config-control.js.
+Also, consider creating `process.env.serviceName` or just leave it hard-coded in config-control.js and in logger.js.
 <br/>
 Navigate to `http://localhost:7800/api-docs/` to watch the swagger Ui for this project.
 <br/>
@@ -57,3 +57,8 @@ To get more help contact ESB team.
 5. oracle db using ???
 6. mongo db using mongodb
 7. json validation using ajv
+
+## Notes
+utilities Folder - will contain basic functions which will be used in sky-path project.
+<br/>
+Also, contains the basic configuration for the project.
