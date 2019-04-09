@@ -1,8 +1,14 @@
-const app = require('./app.js');
-const zooKeeperAccess = require('skp-zookeeper-node-access');
-const zooKeeperUrl = "/skypath/environment/" + process.env.environment + "/node-seed-service/port"
-const port = await zooKeeperAccess.getNodeData(zooKeeperUrl);
+(async() => {
+    const configControl = await require('../resources/utilities/config-control');
+    const logger = require('../resources/logger/logger');
+    const app = require('./app');
+    const port = process.env.port || 7800;
+    
+    logger.addConsoleEndPoint();
+    configControl.err != null ? logger.logWarning(configControl.err) : '';
 
-app.listen(port, () => {
-    console.log('Waiting for request at ' + port)
-});
+    app.listen(port, () => {
+        console.log('Waiting for request at ' + port)
+    });
+})();
+

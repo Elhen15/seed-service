@@ -14,13 +14,13 @@ const options = {
             }
         },
         schemes: ['http'],
-        host: await zooKeeperAccess.getNodeData("/skypath/environment/dev/zookeeperAccess/node-seed-service/osServiceName") || os.hostname() + ':8080'
+        host: (process.env.osServiceName) || (os.hostname() + ':' + (process.env.port || '7800'))
     },
-    apis: ['the name of the js file'],
+    apis: ['src/server/app.js'],
 };
 
 const specs = swaggerJsdoc(options);
 
 module.exports = (app) => {
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
-};
+}

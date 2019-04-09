@@ -17,4 +17,4 @@ function errorHandlerMiddleware() {
 module.exports = {
     accessControlMiddleware, 
     errorHandlerMiddleware
-};
+}

@@ -15,32 +15,34 @@ function validationHandler(requestSchema){
 function handleGet(){
     return function(req, res, next){
         console.log('get requests');
-        next();
+        res.send('get request');
+        // next();
     }
 }
 
 function handlePost(){
     return function(req, res, next){
         console.log('post requests');
-        next();
+        res.send('post request');
+        // next();
     }
 }
 
-//http://localhost:9001/p/5
+//http://localhost:7800/p/5
 function handleGetWithParams(){
     return function(req, res, next){
-        console.log('get requests with params');
-        console.log(req.params.paramVal);
-        next();
+        console.log('get requests with params ' + req.params.paramVal);
+        res.send('get requests with params ' + req.params.paramVal);
+        // next();
     }
 }
 
 //http://localhost:9001/p?paramVal=5
 function handleGetWithQuery(){
     return function(req, res, next){
-        console.log('get requests with query');
-        console.log(req.query.paramVal);
-        next();
+        console.log('get requests with query ' + req.query.paramVal);
+        res.send('get requests with params ' + req.query.paramVal);
+        // next();
     }
 }
 
@@ -50,4 +52,4 @@ module.exports = {
     handlePost,
     handleGetWithParams,
     handleGetWithQuery
-};
+}
