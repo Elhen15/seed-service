@@ -1,0 +1,32 @@
+{
+  "name": "seed-service",
+  "version": "1.0.0",
+  "description": "seed for nodejs projects",
+  "main": "server.js",
+  "testRegex": ".*-test\\.js$",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node src/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://s8267741@bitbucket.app.iaf/scm/sp/node-seed-service.git"
+  },
+  "author": "liza",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^6.10.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jest": "^23.1.0",
+    "mathjs": "^2.7.0",
+    "skp-kafka-node": "^1.0.1",
+    "skp-zookeeper-node-access": "^1.0.0",
+    "sky-path-logger": "^1.0.1",
+    "swagger-jsdoc": "^3.2.8",
+    "swagger-ui-express": "^4.0.2"
+  }
+}
