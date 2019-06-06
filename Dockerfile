@@ -3,6 +3,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 
+ENV TZ="Asia/Jerusalem"
+
 EXPOSE 8081
 
 CMD node server.js
