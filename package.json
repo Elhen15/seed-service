@@ -23,7 +23,7 @@
     "express": "^4.16.4",
     "jest": "^23.1.0",
     "mathjs": "^2.7.0",
-    "skp-kafka-node": "^1.0.1",
+    "skp-kafka-node": "^2.0.2",
     "skp-zookeeper-node-access": "^1.0.0",
     "sky-path-logger": "^1.0.1",
     "swagger-jsdoc": "^3.2.8",
