@@ -91,7 +91,5 @@ To get more help contact ESB team.
 ## Notes
 *`utilities Folder` - will contain basic functions which will be used in sky-path project.
 <br/>
-Also, contains the basic configuration for the project.
-<br/>
 *`jest module` - open isue with npm i jest. If needed take the module from `E:\Node Modules\jest_23.6.0`.
 
