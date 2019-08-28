@@ -1,26 +1,26 @@
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
-const os = require('os');
 
-const options = {
-    swaggerDefinition: {
-        info: {
-            title: 'app',
-            version: '1.0',
-            description: 'describe your app here',
-            contact: {
-                name: 'your name',
-                email: 'your email'
-            }
-        },
-        schemes: ['http'],
-        host: (process.env.osServiceName) || (os.hostname() + ':' + (process.env.port || '7800'))
-    },
-    apis: ['src/server/app.js'],
-};
-
-const specs = swaggerJsdoc(options);
+const { params } = require('../init/init-params');
 
 module.exports = (app) => {
-    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
-}
+	const options = {
+		swaggerDefinition: {
+			info: {
+				title: 'app',
+				version: '1.0',
+				description: 'describe your app here',
+				contact: {
+					name: 'your name',
+					email: 'your email',
+				},
+			},
+			schemes: ['http'],
+			host: params.serviceRoute,
+		},
+		apis: ['src/server/app.js'],
+	};
+
+	const specs = swaggerJsdoc(options);
+	app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+};

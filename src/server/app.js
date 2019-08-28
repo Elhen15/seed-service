@@ -1,15 +1,15 @@
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
+
 const routingFunctions = require('./routing-functions');
 const middlewareFunctions = require('./middleware-functions');
-const bodyParser = require('body-parser');
-const swaggerDoc = require('../resources/swagger/swagger-doc');
-swaggerDoc(app);
+
+const app = express();
 
 app.use([bodyParser.json(),
-        middlewareFunctions.accessControlMiddleware()]);
+	middlewareFunctions.accessControlMiddleware()]);
 
-app.get('/', routingFunctions.handleGet());
+app.get('/', [routingFunctions.handleGet()]);
 
 app.post('/', [routingFunctions.handlePost()]);
 
@@ -21,7 +21,7 @@ app.get('/p', [routingFunctions.handleGetWithQuery()]);
  * @swagger
  * /e:
  *      get:
- *              tags: 
+ *              tags:
  *              - node seed
  *              summary: test the error middleware
  *              description: test the error middleware
@@ -29,10 +29,10 @@ app.get('/p', [routingFunctions.handleGetWithQuery()]);
  *              responses:
  *                      500:
  *                              description: 'Something broke'
- */ 
+ */
 // test error middleware
-app.get('/e', function(req, res, next){
-        throw new Error('Error middleware will catch me');
+app.get('/e', (req, res, next) => {
+	throw new Error('Error middleware will catch me');
 });
 
 // needs to be last

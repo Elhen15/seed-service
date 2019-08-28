@@ -1,6 +1,6 @@
 {
   "name": "seed-service",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "seed for nodejs projects",
   "main": "server.js",
   "testRegex": ".*-test\\.js$",
@@ -9,7 +9,9 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "node src/server/server.js"
+    "start": "node src/server/server.js",
+    "lint": "node node_modules/eslint/bin/eslint.js ./src",
+    "lintfix": "node node_modules/eslint/bin/eslint.js ./src --fix"
   },
   "repository": {
     "type": "git",
@@ -23,10 +25,17 @@
     "express": "^4.16.4",
     "jest": "^23.1.0",
     "mathjs": "^2.7.0",
+    "moment": "^2.24.0",
     "skp-kafka-node": "^2.0.2",
-    "skp-zookeeper-node-access": "^1.0.0",
-    "sky-path-logger": "^1.0.1",
+    "skp-zookeeper-node-access": "^1.0.3",
+    "sky-path-logger": "^1.2.0",
     "swagger-jsdoc": "^3.2.8",
-    "swagger-ui-express": "^4.0.2"
+    "swagger-ui-express": "^4.0.2",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0"
   }
 }
