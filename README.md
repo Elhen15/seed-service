@@ -50,7 +50,7 @@ Use npm run lintfix to auto fix errors.
 <br/>
 NOTE - the seed has some build in errors - 
 
-<blockquote>
+```bash
 \node-seed-service\src\resources\init\config-control.js
   34:4  error  Expected the Promise rejection reason to be an Error  prefer-promise-reject-errors
 
@@ -65,7 +65,7 @@ NOTE - the seed has some build in errors -
   31:9  warning  Unexpected unnamed function  func-names
   39:9  warning  Unexpected unnamed function  func-names
   47:9  warning  Unexpected unnamed function  func-names
-<blockquote>
+```
 
 ## Running unit tests
 
