@@ -7,7 +7,7 @@ module.exports = (app) => {
 	const options = {
 		swaggerDefinition: {
 			info: {
-				title: 'app',
+				title: params.serviceName,
 				version: '1.0',
 				description: 'describe your app here',
 				contact: {

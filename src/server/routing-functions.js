@@ -34,7 +34,7 @@ function handlePost() {
 	};
 }
 
-// http://localhost:7800/p/5
+// http://localhost:7800/p/VALUE
 function handleGetWithParams() {
 	return function (req, res) {
 		logger.logInfo(`get requests with params ${req.params.paramVal}`);
@@ -42,11 +42,11 @@ function handleGetWithParams() {
 	};
 }
 
-// http://localhost:9001/p?paramVal=5
+// http://localhost:9001/p?paramVal=VALUE
 function handleGetWithQuery() {
 	return function (req, res) {
 		logger.logInfo(`get requests with query ${req.query.paramVal}`);
-		res.send(`get requests with params ${req.query.paramVal}`);
+		res.send(`get requests with query ${req.query.paramVal}`);
 	};
 }
 
