@@ -13,7 +13,7 @@ app.use([bodyParser.json(),
  * @swagger
  * /:
  *      get:
- *              tags: 
+ *              tags:
  *              - node seed
  *              summary: test / url
  *              description: test / url
@@ -21,14 +21,14 @@ app.use([bodyParser.json(),
  *              responses:
  *                      200:
  *                              description: 'get'
- */ 
+ */
 app.get('/', [routingFunctions.handleGet()]);
 
 /**
  * @swagger
  * /:
  *      post:
- *              tags: 
+ *              tags:
  *              - node seed
  *              summary: test / url
  *              description: test / url
@@ -36,10 +36,10 @@ app.get('/', [routingFunctions.handleGet()]);
  *              responses:
  *                      200:
  *                              description: 'post'
- */ 
+ */
 app.post('/', [routingFunctions.handlePost()]);
 
- /**
+/**
  * @swagger
  * /p/{paramVal}:
  *  get:
@@ -59,7 +59,7 @@ app.post('/', [routingFunctions.handlePost()]);
  */
 app.get('/p/:paramVal', [routingFunctions.handleGetWithParams()]);
 
- /**
+/**
  * @swagger
  * /p:
  *  get:

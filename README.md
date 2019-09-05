@@ -6,7 +6,9 @@ This project was created in order to avoid all boilerplate configuration when st
 </blockquote>
 
 ## Preparations
-Make sure that your npm registry is set to verdaccio. If not, run `npm set registry http://esb-dev-dck-1:4873`.
+Make sure `yarn` is installed.
+<br/>
+Make sure that your yarn registry is set to verdaccio. If not, run `yarn config set registry http://skp-verdaccio.app.osft`.
 <br/>
 In order to use zookeeper you must set `process.env.zookeeperServer` (a default value is given in config-control.js).
 <br/> 
@@ -30,9 +32,9 @@ To access any param just require init-params.js in your file, assign it to { par
 <br/>
 
 ## Getting Started
-Run `npm install` to install decencies.
+Run `yarn install` to install decencies.
 <br/>
-Run `npm start` to execute the server.
+Run `yarn start` to execute the server.
 <br/>
 Navigate to `http://localhost:7800/`.
 <br/>
@@ -44,9 +46,9 @@ Navigate to `http://localhost:7800/api-docs/` or `openshiftRoute/api-docs/`  to 
 <br/>
 
 ## Running eslint
-Use npm run lint to see style errors.
+Use yarn lint to see style errors.
 <br/>
-Use npm run lintfix to auto fix errors.
+Use yarn lintfix to auto fix errors.
 <br/>
 NOTE - the seed has some build in errors - 
 
@@ -69,7 +71,7 @@ NOTE - the seed has some build in errors -
 
 ## Running unit tests
 
-Run `npm test` to execute the unit tests via [`Jest`](https://confluence.app.iaf/display/MP/Jest).
+Run `yarn test` to execute the unit tests via [`Jest`](https://confluence.app.iaf/display/MP/Jest).
 
 ## Styleguide
 
@@ -90,6 +92,8 @@ To get more help contact ESB team.
 
 ## Notes
 *`utilities Folder` - will contain basic functions which will be used in sky-path project.
+<br/>
+Fixed isue - by using `yarn`
 <br/>
 *`jest module` - open isue with npm i jest. If needed take the module from `E:\Node Modules\jest_23.6.0`.
 
