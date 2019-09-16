@@ -6,7 +6,7 @@ This project was created in order to avoid all boilerplate configuration when st
 </blockquote>
 
 ## Preparations
-Make sure `yarn` is installed.
+Make sure `yarn` is installed(`E:\Elhen\Yarn`).
 <br/>
 Make sure that your yarn registry is set to verdaccio. If not, run `yarn config set registry http://skp-verdaccio.app.osft`.
 <br/>
