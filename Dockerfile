@@ -3,4 +3,4 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-CMD [ "yarn", "start" ]
+CMD [ "npm", "start" ]
