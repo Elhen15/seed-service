@@ -1,39 +1,83 @@
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
+
 const routingFunctions = require('./routing-functions');
 const middlewareFunctions = require('./middleware-functions');
-const bodyParser = require('body-parser');
-const swaggerDoc = require('../resources/swagger/swagger-doc');
-swaggerDoc(app);
+
+const app = express();
 
 app.use([bodyParser.json(),
-        middlewareFunctions.accessControlMiddleware()]);
-
-app.get('/', routingFunctions.handleGet());
-
-app.post('/', [routingFunctions.handlePost()]);
-
-app.get('/p/:paramVal', [routingFunctions.handleGetWithParams()]);
-
-app.get('/p', [routingFunctions.handleGetWithQuery()]);
+	middlewareFunctions.accessControlMiddleware()]);
 
 /**
  * @swagger
- * /e:
+ * /:
  *      get:
- *              tags: 
+ *              tags:
  *              - node seed
- *              summary: test the error middleware
- *              description: test the error middleware
+ *              summary: test / url
+ *              description: test / url
  *              consumes: application/json
  *              responses:
- *                      500:
- *                              description: 'Something broke'
- */ 
-// test error middleware
-app.get('/e', function(req, res, next){
-        throw new Error('Error middleware will catch me');
-});
+ *                      200:
+ *                              description: 'get'
+ */
+app.get('/', [routingFunctions.handleGet()]);
+
+/**
+ * @swagger
+ * /:
+ *      post:
+ *              tags:
+ *              - node seed
+ *              summary: test / url
+ *              description: test / url
+ *              consumes: application/json
+ *              responses:
+ *                      200:
+ *                              description: 'post'
+ */
+app.post('/', [routingFunctions.handlePost()]);
+
+/**
+ * @swagger
+ * /p/{paramVal}:
+ *  get:
+ *      tags:
+ *      - node seed
+ *      summary: test /p/:paramVal url
+ *      description: test /p/:paramVal url
+ *      consumes: application/json
+ *      parameters:
+ *          - in: path
+ *            name: paramVal
+ *            description: param in get with params
+ *            require: true
+ *      responses:
+ *          200:
+ *              description: 'ok'
+ */
+app.get('/p/:paramVal', [routingFunctions.handleGetWithParams()]);
+
+/**
+ * @swagger
+ * /p:
+ *  get:
+ *      tags:
+ *      - node seed
+ *      summary: test /p url
+ *      description: test /p url
+ *      consumes: application/json
+ *      parameters:
+ *          - in: query
+ *            name: paramVal
+ *            description: param in get with query
+ *            require: true
+ *      responses:
+ *          200:
+ *              description: 'ok'
+ */
+app.get('/p', [routingFunctions.handleGetWithQuery()]);
 
 // needs to be last
 app.use([middlewareFunctions.errorHandlerMiddleware()]);

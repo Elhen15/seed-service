@@ -6,40 +6,72 @@ This project was created in order to avoid all boilerplate configuration when st
 </blockquote>
 
 ## Preparations
-Make sure that your npm registry is set to verdaccio. If not, run `npm set registry http://esb-dev-dck-1:4873`.
+Make sure `yarn` is installed(`E:\Elhen\Yarn`).
 <br/>
-In order to use zookeeper you must set `process.env.environment` and `process.env.zookeeperServer`.
+Make sure that your yarn registry is set to verdaccio. If not, run `yarn config set registry http://skp-verdaccio.app.osft`.
+<br/>
+In order to use zookeeper you must set `process.env.zookeeperServer` (a default value is given in config-control.js).
 <br/> 
-zookeeperServer is now hard-coded in config-control.js, change both zookeeperServer and zooKeeperUrl configurations if needed.
+Also, `process.env.ENVIRONMENT` and `process.env.SERVICE_NAME` are needed (default values are given in init-params.js).
+<br/>
+This three environment variables should be set in openshift. If running locally default values would be used.
 <br/>
 Use [`zooki-UI`](http://zooki-skp.app.osft/) or [`createNode & setNodeData`](https://bitbucket.app.iaf/projects/SP/repos/skp-zookeeper-node-access/browse) functions to insert to zookeeper all the needed configurations,
 <br/>
-such as the `kafkaHost` and the express `port`.
+such as the service `LOG_LEVEL` and the express `PORT`.
 <br/>
-Full list of mandatary configurations for the seed can be seen in config-control.js. You can also add costume configurations.
+Full list of mandatary configurations for the seed can be seen in config-control.js.
 <br/>
 Check out the node-seed example at zooki for more information.
+<br/>
+You can also add costume configurations.
+<br/>
+Costume configurations must be added to config-control.js and then to init-params.js under getZookeeperParams().
+<br/>
+To access any param just require init-params.js in your file, assign it to { params } and then use params.YOUR_PARAM_NAME.
+<br/>
 
 ## Getting Started
-Run `npm install` to install decencies.
+Run `yarn install` to install decencies.
 <br/>
-Run `npm start` to execute the server.
+Run `yarn start` to execute the server.
 <br/>
 Navigate to `http://localhost:7800/`.
 <br/>
 The app will automatically reload if you change any of the source files.
 <br/>
-If using open shift create `process.env.environment` & `process.env.zookeeperServer`.
+If using openshift - create `ENVIRONMENT`, `SERVICE_NAME`, `SERVICE_ROUTE` and `zookeeperServer`.
 <br/>
-Also, consider creating `process.env.serviceName` or just leave it hard-coded in config-control.js and in logger.js.
+Navigate to `http://localhost:7800/api-docs/` or `openshiftRoute/api-docs/`  to watch the swagger Ui for this project.
 <br/>
-Navigate to `http://localhost:7800/api-docs/` to watch the swagger Ui for this project.
+
+## Running eslint
+Use yarn lint to see style errors.
 <br/>
-In order to execute your requests from swagger - create osServiceName node on zookeper if running on OS, if not - delete this node or leave it unset.
+Use yarn lintfix to auto fix errors.
 <br/>
+NOTE - the seed has some build in errors - 
+
+```bash
+\node-seed-service\src\resources\init\config-control.js
+  34:4  error  Expected the Promise rejection reason to be an Error  prefer-promise-reject-errors
+
+\node-seed-service\src\server\middleware-functions.js
+   4:9   warning  Unexpected unnamed function       func-names
+  12:9   warning  Unexpected unnamed function       func-names
+  12:34  error    'next' is defined but never used  no-unused-vars
+
+\node-seed-service\src\server\routing-functions.js
+   6:9  warning  Unexpected unnamed function  func-names
+  24:9  warning  Unexpected unnamed function  func-names
+  31:9  warning  Unexpected unnamed function  func-names
+  39:9  warning  Unexpected unnamed function  func-names
+  47:9  warning  Unexpected unnamed function  func-names
+```
+
 ## Running unit tests
 
-Run `npm test` to execute the unit tests via [`Jest`](https://confluence.app.iaf/display/MP/Jest).
+Run `yarn test` to execute the unit tests via [`Jest`](https://confluence.app.iaf/display/MP/Jest).
 
 ## Styleguide
 
@@ -61,7 +93,7 @@ To get more help contact ESB team.
 ## Notes
 *`utilities Folder` - will contain basic functions which will be used in sky-path project.
 <br/>
-Also, contains the basic configuration for the project.
+Fixed isue - by using `yarn`
 <br/>
 *`jest module` - open isue with npm i jest. If needed take the module from `E:\Node Modules\jest_23.6.0`.
 
