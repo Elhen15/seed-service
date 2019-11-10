@@ -2,20 +2,21 @@ const os = require('os');
 
 const params = {};
 
+// default values are highly not recommended
 function getZookeeperParams() {
 	// express
-	params.port = process.env.PORT || 7800;
+	params.port = process.env.PORT;
 
 	// logger
-	params.elkPort = process.env.ELK_PORT || 46780;
-	params.elkHost = process.env.ELK_HOST || 'elk-dev-lga-2';
-	params.logLevel = process.env.LOG_LEVEL || 'info';
+	params.elkPort = process.env.ELK_PORT;
+	params.elkHost = process.env.ELK_HOST;
+	params.logLevel = process.env.LOG_LEVEL;
 
 	// kafka
-	params.kafkaHost = process.env.KAFKA_HOST || 'skp-dev-kfk-1:9092, skp-dev-kfk-2:9092, skp-dev-kfk-3:9092';
+	params.kafkaHost = process.env.KAFKA_HOST;
 
 	// topics
-	params.testTopic = process.env.TEST_TOPIC || 'test.t';
+	params.testTopic = process.env.TEST_TOPIC;
 
 	// for swagger - if running on localhost
 	params.serviceRoute = params.serviceRoute || (`${os.hostname()}:${params.port || '7800'}`);
