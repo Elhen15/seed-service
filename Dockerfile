@@ -1,10 +1,7 @@
-FROM docker-registry-default.app.osft/amitshlo/debian-node:9.6_node-10.13.0_nr AS node
+FROM docker-registry-default.app.osft/sky-path/basenodeimage:latest AS node
 WORKDIR /usr/src/app
 
+EXPOSE 9001
 COPY . .
 
-ENV TZ="Asia/Jerusalem"
-
-EXPOSE 8081
-
-CMD node server.js
+CMD [ "npm", "start" ]
