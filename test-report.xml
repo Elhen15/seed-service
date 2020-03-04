@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\devl\node-seed-service\tests\bl\calculate.test.js">
+    <testCase name="cal Should add two numbers" duration="104"/>
+    <testCase name="cal Should sub two numbers" duration="1"/>
+    <testCase name="cal Should mul two numbers" duration="1"/>
+    <testCase name="cal Should div two numbers" duration="11"/>
+    <testCase name="cal Should throw an error" duration="1"/>
+    <testCase name="cal Should throw an error" duration="0"/>
+    <testCase name="cal Should throw an error" duration="0"/>
+  </file>
+</testExecutions>
