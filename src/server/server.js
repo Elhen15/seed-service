@@ -11,10 +11,9 @@ const { params, getZookeeperParams, getOpenshiftParams } = require('../resources
 		getOpenshiftParams();
 		await configControl();
 		getZookeeperParams();
-
 		initLogger();
-
 		swaggerDoc(app);
+
 		app.listen(params.port, () => {
 			logger.logInfo(`Waiting for request at ${params.port}`);
 		});

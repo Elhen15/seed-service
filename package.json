@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "node src/server/server.js",
+    "start": "nodemon src/server/server.js",
     "lint": "node node_modules/eslint/bin/eslint.js ./src",
     "lintfix": "node node_modules/eslint/bin/eslint.js ./src --fix"
   },
@@ -23,23 +23,20 @@
     "ajv": "^6.10.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "jest": "^23.1.0",
     "mathjs": "^2.7.0",
     "moment": "^2.24.0",
     "skp-kafka-node": "^2.0.2",
     "skp-zookeeper-node-access": "^1.0.3",
     "sky-path-logger": "^1.2.0",
     "swagger-jsdoc": "^3.2.8",
-<<<<<<< HEAD
-    "swagger-ui-express": "^4.0.2"
-=======
     "swagger-ui-express": "^4.0.2",
     "uuid": "^3.3.3"
->>>>>>> remotes/origin/develop
   },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.0"
+    "eslint-plugin-import": "^2.18.0",
+    "jest": "^23.1.0",
+    "nodemon": "^1.19.4"
   }
 }

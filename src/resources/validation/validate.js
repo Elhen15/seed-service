@@ -2,8 +2,9 @@ const Ajv = require('ajv');
 
 const ajv = new Ajv();
 
-module.exports = (userData, requestSchema) => {
-	const validate = ajv.compile(requestSchema);
-	const validation = { isValid: validate(userData), errorDetails: validate.errors };
-	return validation;
+const validation = (userData, requestSchema) => {
+	const schema = ajv.compile(requestSchema);
+	return { isValid: schema(userData), errorDetails: schema.errors };
 };
+
+module.exports = validation;

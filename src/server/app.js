@@ -7,7 +7,7 @@ const middlewareFunctions = require('./middleware-functions');
 const app = express();
 
 app.use([bodyParser.json(),
-	middlewareFunctions.accessControlMiddleware()]);
+	middlewareFunctions.accessControlMiddleware]);
 
 /**
  * @swagger
@@ -22,7 +22,7 @@ app.use([bodyParser.json(),
  *                      200:
  *                              description: 'get'
  */
-app.get('/', [routingFunctions.handleGet()]);
+app.get('/', [routingFunctions.handleGet]);
 
 /**
  * @swagger
@@ -37,7 +37,7 @@ app.get('/', [routingFunctions.handleGet()]);
  *                      200:
  *                              description: 'post'
  */
-app.post('/', [routingFunctions.handlePost()]);
+app.post('/', [routingFunctions.handlePost]);
 
 /**
  * @swagger
@@ -57,7 +57,7 @@ app.post('/', [routingFunctions.handlePost()]);
  *          200:
  *              description: 'ok'
  */
-app.get('/p/:paramVal', [routingFunctions.handleGetWithParams()]);
+app.get('/p/:paramVal', [routingFunctions.handleGetWithParams]);
 
 /**
  * @swagger
@@ -77,9 +77,9 @@ app.get('/p/:paramVal', [routingFunctions.handleGetWithParams()]);
  *          200:
  *              description: 'ok'
  */
-app.get('/p', [routingFunctions.handleGetWithQuery()]);
+app.get('/p', [routingFunctions.handleGetWithQuery]);
 
 // needs to be last
-app.use([middlewareFunctions.errorHandlerMiddleware()]);
+app.use([middlewareFunctions.errorHandlerMiddleware]);
 
 module.exports = app;
