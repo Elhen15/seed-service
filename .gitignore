@@ -3,7 +3,7 @@
 
 # yarn
 yarn.lock
-package.json
+package-lock.json
 
 # node_modules
 /node_modules 
