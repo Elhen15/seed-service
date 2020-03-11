@@ -6,7 +6,7 @@ const accessControlMiddleware = (req, res, next) => {
 	next();
 };
 
-const errorHandlerMiddleware = (err, req, res) => {
+const errorHandlerMiddleware = (err, req, res, next) => {
 	logger.logError(err.stack);
 	res.status(500).send(`error occured - ${err.stack}`);
 };
