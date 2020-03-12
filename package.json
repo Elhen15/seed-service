@@ -11,7 +11,8 @@
     "test": "jest --coverage",
     "lint": "node node_modules/eslint/bin/eslint.js ./src",
     "lint:fix": "yarn lint --fix",
-    "start": "yarn lint:fix && nodemon src/server/server.js"
+    "start": "nodemon src/server/server.js",
+    "start:lint": "yarn lint:fix && yarn start"
   },
   "repository": {
     "type": "git",
