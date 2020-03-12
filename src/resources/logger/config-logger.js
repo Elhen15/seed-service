@@ -2,7 +2,7 @@ const logger = require('sky-path-logger');
 
 const { params } = require('../init/init-params');
 
-module.exports = () => {
+const initLogger = () => {
 	logger.initializeLogger(params.logLevel, { host: params.elkHost, port: params.elkPort });
 	logger.initializeServiceInformation({
 		microserviceData: {
@@ -15,3 +15,5 @@ module.exports = () => {
 	});
 	logger.addConsoleEndPoint();
 };
+
+module.exports = initLogger;

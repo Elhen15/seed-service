@@ -3,35 +3,29 @@ const zooKeeperAccess = require('skp-zookeeper-node-access');
 
 const { params } = require('./init-params');
 
-let err = '';
+const getDynamicNodeData = async (nodeName, zooKeeperUrl) => {
+	try {
+		process.env[nodeName] = await zooKeeperAccess.getNodeData(zooKeeperUrl + nodeName);
+	} catch (err) {
+		delete process.env[nodeName];
+		throw err;
+	}
+};
 
-async function getDynamicNodeData(nodeName, zooKeeperUrl) {
-	await zooKeeperAccess.getNodeData(zooKeeperUrl + nodeName)
-		.then((data) => {
-			process.env[nodeName] = data;
-		})
-		.catch((currentError) => {
-			err = `${err}\n${currentError} ${nodeName}`;
-			delete process.env[nodeName];
-		});
-}
-
-module.exports = () => {
+const initConfigControl = async () => {
 	const zooKeeperServiceUrl = `/skypath/environment/${params.environment}/${params.serviceName}/`;
 	const zooKeeperEnvUrl = `/skypath/environment/${params.environment}/`;
 
-	return new Promise(async (resolve, reject) => {
+	try {
 		await getDynamicNodeData('PORT', zooKeeperServiceUrl);
 		await getDynamicNodeData('ELK_PORT', zooKeeperEnvUrl);
 		await getDynamicNodeData('ELK_HOST', zooKeeperEnvUrl);
 		await getDynamicNodeData('LOG_LEVEL', zooKeeperServiceUrl);
 		await getDynamicNodeData('KAFKA_HOST', zooKeeperEnvUrl);
 		await getDynamicNodeData('TEST_TOPIC', zooKeeperServiceUrl);
-
-		if (err === '') {
-			resolve();
-		} else {
-			reject(`error occurred while connecting to zookeeper - ${err}`);
-		}
-	});
+	} catch (err) {
+		throw new Error(`error occurred while connecting to zookeeper - ${err}`);
+	}
 };
+
+module.exports = initConfigControl;
