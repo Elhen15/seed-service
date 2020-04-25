@@ -9,8 +9,8 @@
   },
   "scripts": {
     "test": "jest --coverage",
-    "lint": "node node_modules/eslint/bin/eslint.js ./src",
-    "lint:fix": "yarn lint --fix",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "start": "nodemon src/server/server.js",
     "start:lint": "yarn lint:fix && yarn start"
   },
@@ -26,9 +26,6 @@
     "express": "^4.16.4",
     "mathjs": "^2.7.0",
     "moment": "^2.24.0",
-    "skp-kafka-node": "^2.0.2",
-    "skp-zookeeper-node-access": "^1.0.3",
-    "sky-path-logger": "^1.2.0",
     "swagger-jsdoc": "^3.2.8",
     "swagger-ui-express": "^4.0.2",
     "uuid": "^3.3.3"
@@ -36,14 +33,17 @@
   "devDependencies": {
     "babel-jest": "^24.9.0",
     "babel-plugin-rewire": "^1.1.0",
-    "eslint": "^5.16.0",
+    "eslint": "5",
     "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-sharongrossman": "^0.1.4",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-lodash": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-unicorn": "^17.2.0",
     "jest": "^23.1.0",
-    "jest-sonar-report": "^2.0.1",
-    "nodemon": "^1.19.4"
-  },
-  "jest": {
-    "testResultsProcessor": "./node_modules/jest-sonar-report"
+    "nodemon": "^1.19.4",
+    "prettier": "^2.0.2"
   }
 }

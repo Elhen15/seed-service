@@ -2,8 +2,12 @@ const logger = require('sky-path-logger');
 
 const { params } = require('../init/init-params');
 
+
 const initLogger = () => {
-	logger.initializeLogger(params.logLevel, { host: params.elkHost, port: params.elkPort });
+	logger.initializeLogger(params.logLevel, {
+		host: params.elkHost,
+		port: params.elkPort,
+	});
 	logger.initializeServiceInformation({
 		microserviceData: {
 			systemName: 'SkyPath',

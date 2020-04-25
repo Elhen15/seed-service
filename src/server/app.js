@@ -4,10 +4,10 @@ const bodyParser = require('body-parser');
 const routingFunctions = require('./routing-functions');
 const middlewareFunctions = require('./middleware-functions');
 
+
 const app = express();
 
-app.use([bodyParser.json(),
-	middlewareFunctions.accessControlMiddleware]);
+app.use([bodyParser.json(), middlewareFunctions.accessControlMiddleware]);
 
 /**
  * @swagger

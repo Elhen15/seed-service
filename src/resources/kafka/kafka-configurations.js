@@ -1,5 +1,6 @@
 const { params } = require('../init/init-params');
 
+
 const consumerGroupConfigurations = {
 	kafkaHost: params.kafkaHost,
 	autoCommit: true,
@@ -7,7 +8,6 @@ const consumerGroupConfigurations = {
 	protocol: ['roundrobin'],
 	fromOffset: 'earliest',
 };
-
 
 const clientConfigurations = {
 	kafkaHost: params.kafkaHost,

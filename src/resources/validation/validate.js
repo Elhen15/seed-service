@@ -1,5 +1,6 @@
 const Ajv = require('ajv');
 
+
 const ajv = new Ajv();
 
 const validation = (userData, requestSchema) => {

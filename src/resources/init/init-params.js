@@ -1,5 +1,6 @@
 const os = require('os');
 
+
 const params = {};
 
 // default values are highly not recommended
@@ -19,7 +20,7 @@ const getZookeeperParams = () => {
 	params.testTopic = process.env.TEST_TOPIC;
 
 	// for swagger - if running on localhost
-	params.serviceRoute = params.serviceRoute || (`${os.hostname()}:${params.port || '7800'}`);
+	params.serviceRoute = params.serviceRoute || `${os.hostname()}:${params.port || '7800'}`;
 };
 
 const getOpenshiftParams = () => {

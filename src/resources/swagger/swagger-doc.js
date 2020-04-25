@@ -3,6 +3,7 @@ const swaggerJsdoc = require('swagger-jsdoc');
 
 const { params } = require('../init/init-params');
 
+
 module.exports = (app) => {
 	const options = {
 		swaggerDefinition: {

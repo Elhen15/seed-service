@@ -1,14 +1,18 @@
-process.env.zookeeperServer = process.env.zookeeperServer || 'skp-int-zoo-1:2181,skp-int-zoo-2:2181,skp-int-zoo-3:2181';
+process.env.zookeeperServer = process.env.zookeeperServer
+  || 'skp-int-zoo-1:2181,skp-int-zoo-2:2181,skp-int-zoo-3:2181';
 const zooKeeperAccess = require('skp-zookeeper-node-access');
 
 const { params } = require('./init-params');
 
+
 const getDynamicNodeData = async (nodeName, zooKeeperUrl) => {
 	try {
-		process.env[nodeName] = await zooKeeperAccess.getNodeData(zooKeeperUrl + nodeName);
-	} catch (err) {
+		process.env[nodeName] = await zooKeeperAccess.getNodeData(
+			zooKeeperUrl + nodeName,
+		);
+	} catch (error) {
 		delete process.env[nodeName];
-		throw err;
+		throw error;
 	}
 };
 
@@ -23,8 +27,8 @@ const initConfigControl = async () => {
 		await getDynamicNodeData('LOG_LEVEL', zooKeeperServiceUrl);
 		await getDynamicNodeData('KAFKA_HOST', zooKeeperEnvUrl);
 		await getDynamicNodeData('TEST_TOPIC', zooKeeperServiceUrl);
-	} catch (err) {
-		throw new Error(`error occurred while connecting to zookeeper - ${err}`);
+	} catch (error) {
+		throw new Error(`error occurred while connecting to zookeeper - ${error}`);
 	}
 };
 

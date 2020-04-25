@@ -25,12 +25,10 @@ const handleGet = (req, res) => {
 	res.send('get request');
 };
 
-
 const handlePost = (req, res) => {
 	logger.logInfo('post requests');
 	res.send('post request');
 };
-
 
 // http://localhost:7800/p/VALUE
 const handleGetWithParams = (req, res) => {
@@ -38,13 +36,11 @@ const handleGetWithParams = (req, res) => {
 	res.send(`get requests with params ${req.params.paramVal}`);
 };
 
-
 // http://localhost:9001/p?paramVal=VALUE
 const handleGetWithQuery = (req, res) => {
 	logger.logInfo(`get requests with query ${req.query.paramVal}`);
 	res.send(`get requests with query ${req.query.paramVal}`);
 };
-
 
 module.exports = {
 	validationHandler,

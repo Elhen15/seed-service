@@ -1,10 +1,14 @@
 const logger = require('sky-path-logger');
-
-const app = require('./app');
+const configControl = require('../resources/init/config-control');
 const swaggerDoc = require('../resources/swagger/swagger-doc');
 const initLogger = require('../resources/logger/config-logger');
-const configControl = require('../resources/init/config-control');
-const { params, getZookeeperParams, getOpenshiftParams } = require('../resources/init/init-params');
+const {
+	params,
+	getZookeeperParams,
+	getOpenshiftParams,
+} = require('../resources/init/init-params');
+const app = require('./app');
+
 
 (async () => {
 	try {
@@ -13,11 +17,10 @@ const { params, getZookeeperParams, getOpenshiftParams } = require('../resources
 		getZookeeperParams();
 		initLogger();
 		swaggerDoc(app);
-
 		app.listen(params.port, () => {
 			logger.logInfo(`Waiting for request at ${params.port}`);
 		});
-	} catch (err) {
-		logger.logError(`error in node-seed-service occurred - ${err}`);
+	} catch (error) {
+		logger.logError(`error in node-seed-service occurred - ${error}`);
 	}
 })();
